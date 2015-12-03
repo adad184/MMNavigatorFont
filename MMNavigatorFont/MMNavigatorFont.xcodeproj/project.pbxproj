@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED4F56EB1C102D6000A9FBB8 /* NSView+MMNavigatorFont.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4F56EA1C102D6000A9FBB8 /* NSView+MMNavigatorFont.m */; };
+		ED5E32FA1C102BFD00929E3B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E32F91C102BFD00929E3B /* AppKit.framework */; };
+		ED5E32FC1C102BFD00929E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E32FB1C102BFD00929E3B /* Foundation.framework */; };
+		ED5E33001C102BFD00929E3B /* MMNavigatorFont.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = ED5E32FF1C102BFD00929E3B /* MMNavigatorFont.xcscheme */; };
+		ED5E33031C102BFD00929E3B /* MMNavigatorFont.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5E33021C102BFD00929E3B /* MMNavigatorFont.m */; };
+		ED5E33061C102BFD00929E3B /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5E33051C102BFD00929E3B /* NSObject_Extension.m */; };
+		ED5E330F1C102C2500929E3B /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5E330E1C102C2500929E3B /* Aspects.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ED4F56E91C102D6000A9FBB8 /* NSView+MMNavigatorFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+MMNavigatorFont.h"; sourceTree = "<group>"; };
+		ED4F56EA1C102D6000A9FBB8 /* NSView+MMNavigatorFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+MMNavigatorFont.m"; sourceTree = "<group>"; };
+		ED5E32F61C102BFD00929E3B /* MMNavigatorFont.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMNavigatorFont.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5E32F91C102BFD00929E3B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		ED5E32FB1C102BFD00929E3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		ED5E32FF1C102BFD00929E3B /* MMNavigatorFont.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = MMNavigatorFont.xcscheme; path = MMNavigatorFont.xcodeproj/xcshareddata/xcschemes/MMNavigatorFont.xcscheme; sourceTree = SOURCE_ROOT; };
+		ED5E33011C102BFD00929E3B /* MMNavigatorFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMNavigatorFont.h; sourceTree = "<group>"; };
+		ED5E33021C102BFD00929E3B /* MMNavigatorFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMNavigatorFont.m; sourceTree = "<group>"; };
+		ED5E33041C102BFD00929E3B /* NSObject_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Extension.h; sourceTree = "<group>"; };
+		ED5E33051C102BFD00929E3B /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
+		ED5E33071C102BFD00929E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5E330D1C102C2500929E3B /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		ED5E330E1C102C2500929E3B /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED5E32F41C102BFD00929E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED5E32FA1C102BFD00929E3B /* AppKit.framework in Frameworks */,
+				ED5E32FC1C102BFD00929E3B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED5E32ED1C102BFD00929E3B = {
+			isa = PBXGroup;
+			children = (
+				ED5E32FD1C102BFD00929E3B /* MMNavigatorFont */,
+				ED5E32F81C102BFD00929E3B /* Frameworks */,
+				ED5E32F71C102BFD00929E3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED5E32F71C102BFD00929E3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E32F61C102BFD00929E3B /* MMNavigatorFont.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED5E32F81C102BFD00929E3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E32F91C102BFD00929E3B /* AppKit.framework */,
+				ED5E32FB1C102BFD00929E3B /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED5E32FD1C102BFD00929E3B /* MMNavigatorFont */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E33011C102BFD00929E3B /* MMNavigatorFont.h */,
+				ED5E33021C102BFD00929E3B /* MMNavigatorFont.m */,
+				ED5E33041C102BFD00929E3B /* NSObject_Extension.h */,
+				ED5E33051C102BFD00929E3B /* NSObject_Extension.m */,
+				ED4F56E91C102D6000A9FBB8 /* NSView+MMNavigatorFont.h */,
+				ED4F56EA1C102D6000A9FBB8 /* NSView+MMNavigatorFont.m */,
+				ED5E330D1C102C2500929E3B /* Aspects.h */,
+				ED5E330E1C102C2500929E3B /* Aspects.m */,
+				ED5E33071C102BFD00929E3B /* Info.plist */,
+				ED5E32FE1C102BFD00929E3B /* Supporting Files */,
+			);
+			path = MMNavigatorFont;
+			sourceTree = "<group>";
+		};
+		ED5E32FE1C102BFD00929E3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E32FF1C102BFD00929E3B /* MMNavigatorFont.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED5E32F51C102BFD00929E3B /* MMNavigatorFont */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED5E330A1C102BFD00929E3B /* Build configuration list for PBXNativeTarget "MMNavigatorFont" */;
+			buildPhases = (
+				ED5E32F21C102BFD00929E3B /* Sources */,
+				ED5E32F31C102BFD00929E3B /* Resources */,
+				ED5E32F41C102BFD00929E3B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMNavigatorFont;
+			productName = MMNavigatorFont;
+			productReference = ED5E32F61C102BFD00929E3B /* MMNavigatorFont.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED5E32EE1C102BFD00929E3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = LJC;
+				TargetAttributes = {
+					ED5E32F51C102BFD00929E3B = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = ED5E32F11C102BFD00929E3B /* Build configuration list for PBXProject "MMNavigatorFont" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ED5E32ED1C102BFD00929E3B;
+			productRefGroup = ED5E32F71C102BFD00929E3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED5E32F51C102BFD00929E3B /* MMNavigatorFont */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED5E32F31C102BFD00929E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED5E33001C102BFD00929E3B /* MMNavigatorFont.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED5E32F21C102BFD00929E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED5E33031C102BFD00929E3B /* MMNavigatorFont.m in Sources */,
+				ED5E33061C102BFD00929E3B /* NSObject_Extension.m in Sources */,
+				ED4F56EB1C102D6000A9FBB8 /* NSView+MMNavigatorFont.m in Sources */,
+				ED5E330F1C102C2500929E3B /* Aspects.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		ED5E33081C102BFD00929E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		ED5E33091C102BFD00929E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		ED5E330B1C102BFD00929E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = MMNavigatorFont/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adad184.MMNavigatorFont.MMNavigatorFont;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		ED5E330C1C102BFD00929E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = MMNavigatorFont/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adad184.MMNavigatorFont.MMNavigatorFont;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED5E32F11C102BFD00929E3B /* Build configuration list for PBXProject "MMNavigatorFont" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED5E33081C102BFD00929E3B /* Debug */,
+				ED5E33091C102BFD00929E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED5E330A1C102BFD00929E3B /* Build configuration list for PBXNativeTarget "MMNavigatorFont" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED5E330B1C102BFD00929E3B /* Debug */,
+				ED5E330C1C102BFD00929E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED5E32EE1C102BFD00929E3B /* Project object */;
+}
