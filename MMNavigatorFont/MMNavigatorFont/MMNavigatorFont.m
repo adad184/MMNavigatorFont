@@ -51,7 +51,6 @@ static NSString *const MMProjectEnabledKey = @"MMProjectEnabledKey";
         
         self.selectedFont = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:MMProjectFontKey]];
         self.enabled = [[[NSUserDefaults standardUserDefaults] objectForKey:MMProjectEnabledKey] boolValue];
-        
     }
     return self;
 }
@@ -71,58 +70,67 @@ static NSString *const MMProjectEnabledKey = @"MMProjectEnabledKey";
     if (menuItem) {
         [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
         
-        self.menuItemEnable = [[NSMenuItem alloc] initWithTitle:@"Enable"
-                                                         action:@selector(actionEnable)
-                                                  keyEquivalent:@""];
-        self.menuItemEnable.target = self;
-        self.menuItemEnable.enabled = YES;
-        self.menuItemEnable.state = self.enabled?NSOnState:NSOffState;
+        self.menuItemEnable = ({
+            NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Enable"
+                                                          action:@selector(actionEnable)
+                                                   keyEquivalent:@""];
+            item.target = self;
+            item.enabled = YES;
+            item.state = self.enabled?NSOnState:NSOffState;
+            
+            item;
+        });
         
-        self.menuItemChoose = [[NSMenuItem alloc] initWithTitle:@"Choose Font"
-                                                         action:@selector(actionChoose)
-                                                  keyEquivalent:@""];
-        self.menuItemChoose.target = self;
+        self.menuItemChoose = ({
+            NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Choose Font"
+                                                          action:@selector(actionChoose)
+                                                   keyEquivalent:@""];
+            item.target = self;
+            
+            item;
+        });
         
-        NSMenu *allMenu = [[NSMenu alloc] initWithTitle:@"Navigator Font"];
-        allMenu.autoenablesItems = YES;
-        [allMenu addItem:self.menuItemEnable];
-        [allMenu addItem:self.menuItemChoose];
+        NSMenu *allMenu = ({
+            NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Navigator Font"];
+            menu.autoenablesItems = YES;
+            [menu addItem:self.menuItemEnable];
+            [menu addItem:self.menuItemChoose];
+            
+            menu;
+        });
         
         
-        NSMenuItem *customizeMenu = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Navigator Font"]
-                                                               action:nil
-                                                        keyEquivalent:@""];
-        customizeMenu.submenu = allMenu;
-        customizeMenu.enabled = YES;
+        NSMenuItem *customizeMenu = ({
+            NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Navigator Font"]
+                                       action:nil
+                                keyEquivalent:@""];
+            item.submenu = allMenu;
+            item.enabled = YES;
+            
+            item;
+        });
         
         [[menuItem submenu] addItem:customizeMenu];
-        
     }
 }
 
 - (void)setupHook
 {
-    
     MMWeakify(self);
+    
     void(^fontBlock)(id<AspectInfo> info) = ^(id<AspectInfo> info) {
         MMStrongify(self);
         
         NSView *view = info.instance;
-        if ( !view.originalTitleFont )
-        {
-            NSTextField *titleTextFiled = [view valueForKey:@"_titleTextField"];
-            NSTextField *subtitleTextFiled = [view valueForKey:@"_subtitleTextField"];
-            
-            view.originalTitleFont = titleTextFiled.font;
-            view.originalSubtitleFont = subtitleTextFiled.font;
-        }
-        
+        NSTextField *titleTextFiled = [view valueForKey:@"_titleTextField"];
+        NSTextField *subtitleTextFiled = [view valueForKey:@"_subtitleTextField"];
+        view.originalTitleFont = titleTextFiled.font;
+        view.originalSubtitleFont = subtitleTextFiled.font;
         
         if ( self.enabled && self.selectedFont )
         {
             [self applyFont:view];
         }
-        
     };
     
     [objc_getClass("DVTTableCellViewOneLine") aspect_hookSelector:@selector(awakeFromNib)
@@ -137,7 +145,7 @@ static NSString *const MMProjectEnabledKey = @"MMProjectEnabledKey";
     
     
     
-    void(^controlBarBlock)(id<AspectInfo> info) = ^(id<AspectInfo> info) {
+    void(^outlineViewBlock)(id<AspectInfo> info) = ^(id<AspectInfo> info) {
         MMStrongify(self);
         
         self.outlineView = info.instance;
@@ -145,16 +153,14 @@ static NSString *const MMProjectEnabledKey = @"MMProjectEnabledKey";
     
     [objc_getClass("IDENavigatorOutlineView") aspect_hookSelector:@selector(viewDidMoveToSuperview)
                                                       withOptions:AspectPositionAfter
-                                                       usingBlock:controlBarBlock
+                                                       usingBlock:outlineViewBlock
                                                             error:nil];
 }
 
 - (void)actionEnable
 {
     self.enabled = !self.enabled;
-    NSLog(@"actionEnable %d",self.enabled);
     self.menuItemEnable.state = self.enabled?NSOnState:NSOffState;
-    
     
     [[NSUserDefaults standardUserDefaults] setObject:@(self.enabled) forKey:MMProjectEnabledKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -164,16 +170,14 @@ static NSString *const MMProjectEnabledKey = @"MMProjectEnabledKey";
 
 - (void)actionChoose
 {
-    NSLog(@"actionChoose");
-    
     [[NSFontManager sharedFontManager] setDelegate:self];
     [[NSFontManager sharedFontManager] setSelectedFont:self.selectedFont?:[NSFont systemFontOfSize:13] isMultiple:NO];
     [[NSFontManager sharedFontManager] setTarget:self];
     [[NSFontManager sharedFontManager] orderFrontFontPanel:nil];
 }
 
-- (void)changeFont:(id)sender {
-    
+- (void)changeFont:(id)sender
+{
     self.selectedFont = [sender convertFont:self.selectedFont];
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.selectedFont] forKey:MMProjectFontKey];
